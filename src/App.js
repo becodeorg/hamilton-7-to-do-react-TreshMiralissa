@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Title from './components/title.js';
 import InputField from './components/inputField.js';
@@ -15,7 +14,6 @@ function App() {
         <SubmitButton/>
         <SecondTitle/>
         <TodoList/>
-        <img src={logo} className="App-logo" alt="logo" />
       </header>
     </div>
   );

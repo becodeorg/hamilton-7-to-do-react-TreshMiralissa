@@ -1,10 +1,11 @@
+// import React, { useState } from "react";
+
 export default function TodoList(){
-    const todo = ["Translate informations", "Learn React", "Be Awesome !"];
+    const initialTodos = ["Translate informations", "Learn React", "Be Awesome !"];;
+    
+    const listItems = initialTodos.map((todo)=>
+    <li key={todo.id()}>{todo}</li>);
     return(
-        <ul>
-            {TodoList.map((todo)=> (
-            <li><input type="checkbox" />{todo}</li>
-            ))}
-        </ul>
+        <ul>{listItems}</ul>
     );
 }
