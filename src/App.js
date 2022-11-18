@@ -3,6 +3,7 @@ import './App.css';
 import Title from './components/title.js';
 import InputField from './components/inputField.js';
 import SubmitButton from './components/submitButton';
+import TodoList from './components/todoList';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Title/>
         <InputField/>
         <SubmitButton/>
+        <TodoList/>
         <img src={logo} className="App-logo" alt="logo" />
       </header>
     </div>
