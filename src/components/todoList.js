@@ -18,17 +18,19 @@ export default function TodoList() {
   };
 
   return (
-    <ul>
-      {todos.map((todo) => (
-        <li key={idUnique++}>
-          <input type="checkbox"
-          defaultChecked={checked}
-          onChange={handleChangeset}          
-          />{todo}
-        </li>
-      
-      ))}
-    </ul>
+    <section>
+      <h2  className="text-2xl font-bold">Todos</h2>
+      <ul>
+        {todos.map((todo) => (
+          <li key={idUnique++}>
+            <input type="checkbox"
+            defaultChecked={checked}
+            onChange={handleChangeset}          
+            />{todo}
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
 
