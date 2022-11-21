@@ -24,7 +24,7 @@ export default function TodoList() {
           <input type="checkbox"
           defaultChecked={checked}
           onChange={handleChangeset}          
-          />{todo};
+          />{todo}
         </li>
       
       ))}

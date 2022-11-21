@@ -1,20 +1,18 @@
 import './App.css';
-import Title from './components/title.js';
-import InputField from './components/inputField.js';
-import SubmitButton from './components/submitButton';
-import SecondTitle from './components/secondTitle';
+import Title from './components/title';
+import AddToDo from './components/addToDo';
 import TodoList from './components/todoList';
+import SecondTitle from './components/secondTitle';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Title/>
-        <InputField/>
-        <SubmitButton/>
+      <Title/>
+      <main className="px-10">
+        <AddToDo/>
         <SecondTitle/>
         <TodoList/>
-      </header>
+      </main>
     </div>
   );
 }

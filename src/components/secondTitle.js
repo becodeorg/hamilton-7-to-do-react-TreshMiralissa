@@ -1,3 +1,3 @@
-const SecondTitle = () => <h2>Todos</h2>;
+const SecondTitle = () => <h2  className="text-2xl font-bold">Todos</h2>;
 
 export default SecondTitle;
