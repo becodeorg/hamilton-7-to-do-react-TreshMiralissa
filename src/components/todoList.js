@@ -2,10 +2,8 @@
 import React, { useState } from "react";
 
 
-export default function TodoList() {
+export default function TodoList(props) {
   let idUnique = 0;
-  const initialTodos = ["Translate informations", "Learn React", "Be Awesome !"];
-  const [todos, setTodos] = useState(initialTodos);
   const [checked, setChecked] = React.useState(false);
 
   const handleChangeset = event => {
@@ -21,7 +19,7 @@ export default function TodoList() {
     <section>
       <h2  className="text-2xl font-bold">Todos</h2>
       <ul>
-        {todos.map((todo) => (
+        {props.todos.map((todo) => (
           <li key={idUnique++}>
             <input type="checkbox"
             defaultChecked={checked}

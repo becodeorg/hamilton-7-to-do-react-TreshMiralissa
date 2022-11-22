@@ -5,13 +5,16 @@ import TodoList from './components/todoList';
 import React, { useState } from "react";
 
 function App() {
-  const [todos, setTodos] = useState();
+  const initialTodos = ["Translate informations", "Learn React", "Be Awesome !"];
+  const [todos, setTodos] = useState(initialTodos);
+
   return (
     <div className="App">
       <Title/>
       <main className="px-10">
-        <AddToDo/>
-        <TodoList/>
+        <AddToDo todos={todos} setTodos={setTodos}/>  {/* transfert le tabl todos et sa fonction dans AddToDo */}
+        <TodoList todos={todos} setTodos={setTodos}/> 
+        {/* idem dans TodoList */}
       </main>
     </div>
   );
