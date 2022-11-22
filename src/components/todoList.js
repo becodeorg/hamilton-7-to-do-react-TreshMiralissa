@@ -1,7 +1,4 @@
-
 import React from "react";
-import Checkbox from 'react-checkbox-component';
-
 
 export default function TodoList(props) {
   let idUnique = 0;
@@ -18,11 +15,11 @@ export default function TodoList(props) {
 
   return (
     <section>
-      <h2  className="text-2xl font-bold">Todos</h2>
+      <h2  className="text-2xl font-bold m-5">Todos List</h2>
       <ul>
         {props.todos.map((todo) => (
           <li key={idUnique++}>
-            <input className="w-4 h-4 rounded"type="checkbox"
+            <input className="w-4 h-4" type="checkbox"
             defaultChecked={checked}
             onChange={handleChangeset}          
             />{todo}
