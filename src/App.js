@@ -9,9 +9,9 @@ function App() {
   const [todos, setTodos] = useState(initialTodos);
 
   return (
-    <div className="App">
+    <div className="bg-pink-100 flex flex-col items-center justify-start min-h-screen">
       <Title/>
-      <main className="px-10">
+      <main className="flex flex-col items-center w-full px-10">
         <AddToDo todos={todos} setTodos={setTodos}/>  {/* transfert le tabl todos et sa fonction dans AddToDo */}
         <TodoList todos={todos} setTodos={setTodos}/> 
         {/* idem dans TodoList */}
