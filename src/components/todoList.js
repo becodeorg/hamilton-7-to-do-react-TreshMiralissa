@@ -1,5 +1,6 @@
 
 import React from "react";
+import Checkbox from 'react-checkbox-component';
 
 
 export default function TodoList(props) {
@@ -21,7 +22,7 @@ export default function TodoList(props) {
       <ul>
         {props.todos.map((todo) => (
           <li key={idUnique++}>
-            <input type="checkbox"
+            <input className="w-4 h-4 rounded"type="checkbox"
             defaultChecked={checked}
             onChange={handleChangeset}          
             />{todo}
