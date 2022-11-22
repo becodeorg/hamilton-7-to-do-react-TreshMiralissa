@@ -15,6 +15,13 @@ function App() {
       window.localStorage.setItem(LSKEY + ".todos", JSON.stringify(todos));
     }, [todos]);
 
+    useEffect(() => {
+      const todos = JSON.parse(localStorage.getItem('todos'));
+      if (todos) {
+       setTodos(todos);
+      }
+    }, []);
+
   return (
     <div className="bg-pink-100 flex flex-col items-center justify-start min-h-screen">
       <Title/>
