@@ -1,16 +1,7 @@
-import { useState } from "react";
-import { v4 as uuidv4 } from 'uuid';
 
-const ListTodo = () => {
 
-    const initialList = [
-    {name: "Learn React", done:false, id: uuidv4()},
-    {name: "Learn Tailwind", done:false, id: uuidv4()},
-    {name: "Finish project", done:false, id: uuidv4()},
-    ];
-
-    const [todos, setTodos] = useState(initialList);
-
+const ListTodo = ({todos, setTodos}) => {
+    
     const handleCheck = (id) =>{
         const newList = todos.map((todo)=>{
             if(todo.id === id){
@@ -31,7 +22,7 @@ const ListTodo = () => {
                             type="checkbox" 
                             id={todo.id}
                             onChange={()=> {handleCheck(todo.id)}}/>
-                        <label className={todo.done ? "line-through" :"no-underline"} /*si c'est oui - 1er, si c'est non - le 2nd */
+                        <label className={todo.done ? "line-through" :"no-underline"} /*? pose une question si c'est oui - 1er, si c'est non - le 2nd */
                         htmlFor={todo.id}>{todo.name}</label>
                     </li>
                     );
