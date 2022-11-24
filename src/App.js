@@ -2,24 +2,41 @@ import "./index.css"
 import AddTodo from "./components/AddTodo"
 import ListTodo from "./components/ListTodo"
 
-import { useState } from "react";
-import { v4 as uuidv4 } from 'uuid';
+import { useState, useEffect } from "react";
+import { useRef } from "react";
+// import { v4 as uuidv4 } from 'uuid';
 
 
 function App(){
   const initialList = [
-    {name: "Learn React", done:false, id: uuidv4()},
-    {name: "Learn Tailwind", done:false, id: uuidv4()},
-    {name: "Finish project", done:false, id: uuidv4()},
     ];
+
+    const LSKEY = "My TodoApp";
+
+    const firstUpdate = useRef(true);
 
     const [todos, setTodos] = useState(initialList);
     
     const addItem = (value) =>{
       const copyArr = [...todos];
-      todos.push(value);
+      copyArr.push(value);
       setTodos(copyArr);
     }
+
+    useEffect(()=> {
+      let data = JSON.parse(window.localStorage.getItem(LSKEY + ".todos"));
+      setTodos(data ?? []);
+    }, []);
+
+     // Save todos to localStorage
+    useEffect(() => {
+      if (firstUpdate.current){
+        firstUpdate.current = false;
+        return;
+      }
+      window.localStorage.setItem(LSKEY + ".todos", JSON.stringify(todos));
+    }, [todos]);
+
 
   return (
     <div>
